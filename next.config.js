@@ -9,5 +9,10 @@ module.exports = {
         domains: ["localhost"],
     },
 
-    env: {},
+    env: {
+        NEXT_PUBLIC_API_URL: 'http://localhost:3000',
+        user: 'tbonnardel@gmail.com',
+        pass: '0SHt9rd6aOgRfZTJ'
+
+    },
 };

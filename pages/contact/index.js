@@ -7,7 +7,7 @@ import ContactElement from '../../components/ContactElement/ContactElement'
 import Footer from "../../components/Footer/Footer";
 
 
-export default function Contact() {
+const Contact = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm({criteriaMode: "all"});
     const router = useRouter()
 
@@ -182,5 +182,7 @@ export default function Contact() {
         </div>
     );
 }
+
+export default Contact;
 
 
