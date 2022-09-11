@@ -1,8 +1,8 @@
 import ServiceCard from '../serviceCard/ServiceCard'
 
 
-import {GiButterfly, GiLotus} from "react-icons/Gi"
-import {FaYinYang} from "react-icons/Fa";
+import {GiButterfly, GiLotus} from "react-icons/gi"
+import {FaYinYang} from "react-icons/fa";
 
 
 const ServicesItems = [
