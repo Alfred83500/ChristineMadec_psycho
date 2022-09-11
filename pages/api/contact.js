@@ -19,7 +19,7 @@ const contactapi = (req, res) => {
     try {
         const emailRes = transporter.sendMail({
             from: Email,
-            to: 'tbonnardel@gmail.com',
+            to: 'chrismade@orange.fr',
             subject: `Prise de contact de ${Nom}`,
             html: `<p>Vous avez une nouvelle prise de contact</p><br>
                 <p><strong>Name:</strong> ${Nom} </p><br>
