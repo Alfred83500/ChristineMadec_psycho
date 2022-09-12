@@ -174,7 +174,7 @@ const Contact = () => {
             <div className="mx-auto w-full max-w-7xl  px-12   ">
                 <ContactElement/>
             </div>
-            <div className="mt-12 relative bottom-0">
+            <div className=" relative bottom-0">
                 <Footer/>
             </div>
 
