@@ -7,14 +7,14 @@ function Hero(props) {
 
             className="pb-10 xl:pb-0 flex flex-col-reverse justify-end xl:flex-row h-full h-[90vh] max-w-full  md:px-0 font-roboto bg-gray-200 bg-opacity-10 ">
 
-            <div className="  flex flex-col xl:mt-32 sm:text-center xl:w-1/2  ">
+            <div className="flex flex-col sm:text-center xl:w-1/2 xl:h-full md:mt-32 left-10 top-18  ">
                 <div className="titre">
                     <div className="   w-full h-full p-6">
 
 
-                        <h1 className=" text-4xl text-center md:text-7xl lg:text-7xl  text-red-900 font-semibold font-roboto ">Psychologue
+                        <h1 className=" text-4xl text-center md:text-4xl lg:text-7xl  text-red-900 font-semibold font-roboto ">Psychologue
                             à Toulon</h1>
-                        <h2 className="text-xl md:text-3xl font-medium mt-12 text-white italic text-center text-gray-500">Hypnose
+                        <h2 className="text-xl md:text-xl font-medium mt-12 text-white italic text-center text-gray-500 lg:mt-12">Hypnose
                             - Thérapies brèves - Gestion du stress - <span
                                 className="block">Régression vies antérieures </span></h2>
                     </div>
@@ -23,7 +23,7 @@ function Hero(props) {
 
                 <button
 
-                    className="xl: mt-20 text-indigo-50 p-4 bg-red-900 w-2/4 md:w-1/4 rounded-md shadow hover:bg-red-700 duration-500 hover:text-gray-300 ease-in-out mx-auto text-2xl">
+                    className="xl:mt-20 text-indigo-50 p-4 bg-red-900 w-2/4 md:w-1/4 rounded-md shadow hover:bg-red-700 duration-500 hover:text-gray-300 ease-in-out mx-auto text-2xl">
                     <Link href="/contact"><a>Me contacter</a></Link></button>
 
 
@@ -33,7 +33,7 @@ function Hero(props) {
                 {/*    /!*</a>*!/*/}
                 {/*</div>*/}
             </div>
-            <div className=" block bg bg-hero bg-cover w-full h-2/5 xl:h-full xl:w-1/2 sm:h-full ">
+            <div className=" block bg bg-hero bg-cover w-full h-full xl:h-full xl:w-1/2 sm:h-full ">
 
 
             </div>

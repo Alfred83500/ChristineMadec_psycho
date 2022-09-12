@@ -47,7 +47,7 @@ export default function services() {
 
                 {ServicesItems.map((item) => {
                     return (
-                        <div className='  sm:w-1/3 mt-8 font-roboto lg:mr-12' key={item.title}>
+                        <div className='  md:w-1/3 mt-8 font-roboto lg:mr-12' key={item.title}>
                             <ServiceCard
 
                                 emote={item.emote}
