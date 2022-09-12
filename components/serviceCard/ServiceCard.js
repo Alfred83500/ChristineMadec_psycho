@@ -10,7 +10,7 @@ export default function ServiceCard({title, subtitle, body, emote}) {
 
             </div>
             <div className='card-content flex flex-col items-center justify-center xl:ml-6'>
-                <div><h3 className="text-center lg:text-2xl text-xl font-semibold text-gray-700  text-gray-700 text-md pt-2"> {title} </h3></div>
+                <div><h3 className="text-center lg:text-xl text-xl font-semibold text-gray-700  text-gray-700 text-md pt-2"> {title} </h3></div>
                 <div><h4 className="text-center   text-black text-md italic pt-2">{subtitle}</h4></div>
                 <div><p
                     className=" text-medium  leading-relaxed w-10/12 mx-auto text-md  text-gray-500 text-left mt-10 "> {body} </p>
