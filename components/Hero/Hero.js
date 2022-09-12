@@ -7,7 +7,7 @@ function Hero(props) {
 
             className="pb-10 xl:pb-0 flex flex-col-reverse justify-end xl:flex-row h-full h-[90vh] max-w-full  md:px-0 font-roboto bg-gray-200 bg-opacity-10 ">
 
-            <div className=" py-auto flex flex-col xl:mt-60 sm:text-center xl:w-1/2 xl:pt-40 mt-24">
+            <div className="  flex flex-col xl:mt-32 sm:text-center xl:w-1/2  ">
                 <div className="titre">
                     <div className="   w-full h-full p-6">
 
