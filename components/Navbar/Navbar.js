@@ -29,11 +29,11 @@ export default function Navbar() {
 
 
     return (
-        <Disclosure as="nav" className="bg-white font-roboto fixed w-full z-50  ">
+        <Disclosure as="nav" className="bg-white font-roboto fixed w-full z-50 p-2  shadow-sm  ">
             {({open}) => (
                 <>
                     <div
-                        className="max-w-full  mx-auto sm:px-6 lg:px-8 shadow-gray-300  shadow-sm  w-full z-50 top-0 bg-white">
+                        className="max-w-full  mx-auto sm:px-6 lg:px-8 shadow-gray-300   w-full z-50 top-0 bg-white">
                         <div className="relative flex items-center h-16 mx-4 ">
                             <div className="absolute right-0 top-3 flex items-center md:hidden">
                                 {/* Mobile menu button*/}
@@ -52,17 +52,17 @@ export default function Navbar() {
                                 <Link rel="stylesheet" href="/">
                                     <a>
                                         <div
-                                            className='flex flex-row  items-center justify-between  '>
+                                            className='flex flex-col  items-center justify-between  '>
                                             <p className='text-gray-900 text-xl text-gray-700 font-semibold sm:text-3xl md:text-4xl lg:text-5xl'>Christine
                                                 Madec</p>
 
-                                            <div className="  justify-start   flex">
+                                            <div className="flex  justify-start   ">
 
 
-                                                <p className="text-md italic text-gray-700 lg:text-xl mt-1 md:ml-12  "><span
-                                                    className="hidden md:inline-block">Psychologue à Toulon -</span>
+                                                <p className="text-md italic text-gray-700 lg:text-xl mt-1   "><span
+                                                    className="hidden md:inline-block">Psychologue à Toulon - </span>
                                                     <span
-                                                        className="font-semibold ml-2 sm:ml-6 md:ml-0">06 14 63 23 69</span>
+                                                        className="font-semibold sm:ml-6 md:ml-0">  06 14 63 23 69</span>
                                                 </p>
 
                                             </div>
