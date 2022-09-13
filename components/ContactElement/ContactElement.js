@@ -42,7 +42,7 @@ export default function contactElement(bg, textsize) {
                             >
                                 {item.emote}
                             </div>
-                            <div className="font-roboto text-gray-500 w-full ml-4 text-sm xl:text-xl ">
+                            <div className="font-roboto text-gray-500 w-full ml-4 text-md xl:text-md ">
                                 {item.title}
                             </div>
 

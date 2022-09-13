@@ -6,7 +6,7 @@ export default function About({title, imageUrl, imageAlt, body}) {
     return (
 
 
-        <section className='lg:px-20 px-4 lg:px-10    bg-gray-200 bg-opacity-10 flex flex-col  '>
+        <section className='lg:px-20 px-4 lg:px-10    bg-gray-200 bg-opacity-10 flex flex-col pb-12  '>
             <div className="mx-auto mt-24">
                 <h2 className='text-center text-3xl  text-gray-700 font-roboto font-medium  px-6'>A propos de moi</h2>
                 <div className="w-2/12  h-0.5 bg-red-900 text-center mx-auto mt-2 mb-40"></div>
@@ -15,16 +15,39 @@ export default function About({title, imageUrl, imageAlt, body}) {
 
 
             <div className="flex flex-col items-center sm:items-start lg:flex-row  justify-around   ">
+                <div className=" flex flex-col w-1/2 justify-between">
                 <div className="relative w-300 h-300 mx-auto">
 
-                    <div
-                        className='hidden lg:block absolute w-full h-full bg-gray-700 bg-opacity-20  -top-16 -left-16 w-full '></div>
-                    <Image src={imageUrl} alt={imageAlt}
-                           width={300}
-                           height={300}
-                           className=""
+                        <div className='hidden lg:block absolute w-full h-full bg-gray-700 bg-opacity-20  -top-16 -left-16 w-full '></div>
+                            <Image src={imageUrl} alt={imageAlt}
+                                   width={300}
+                                   height={300}
+                                   className=""
 
-                    />
+                            />
+
+                </div>
+
+                <div className="space-x-5 mt-32 md:p-4">
+                    <h3 className="font-roboto font-semibold text-gray-700 text-2xl mb-6">Diplômes et
+                        certifications:</h3>
+
+                    <li className="text-gray-500  text-lg">Master PNL Programmation Neuro Linguistique</li>
+                    <li className="text-gray-500  text-lg">Master Sophrologie caycédienne</li>
+                    <li className="text-gray-500  text-lg">Europe Accréditation practicien par le Dr David Servan
+                        Schreiber en EMDR (Eye Movement Desinsitization Reprocessing)
+                    </li>
+                    <li className="text-gray-500  text-lg">Practricienne neuro-sciences par le Dr Mario Beauregard
+                    </li>
+                    <li className="text-gray-500  text-lg">Accréditation Maitre pratricienne en Hypnose spirituelle
+                        de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose de Spirituelle) en
+                        2022
+                    </li>
+
+
+                </div>
+
+                <ContactElement/>
                 </div>
 
 
@@ -64,26 +87,7 @@ export default function About({title, imageUrl, imageAlt, body}) {
                             l&rsquo;état qu’on veut atteindre. Elle permet aussi de se connecter à plus grand que
                             soi et d’explorer d&rsquo;autres espaces comme les vies antérieures. </p>
                     </div>
-                    <div className="space-x-5 mt-12 md:p-4">
-                        <h3 className="font-roboto font-semibold text-gray-700 text-2xl mb-6">Diplômes et
-                            certifications:</h3>
 
-                        <li className="text-gray-500  text-lg">Master PNL Programmation Neuro Linguistique</li>
-                        <li className="text-gray-500  text-lg">Master Sophrologie caycédienne</li>
-                        <li className="text-gray-500  text-lg">Europe Accréditation practicien par le Dr David Servan
-                            Schreiber en EMDR (Eye Movement Desinsitization Reprocessing)
-                        </li>
-                        <li className="text-gray-500  text-lg">Practricienne neuro-sciences par le Dr Mario Beauregard
-                        </li>
-                        <li className="text-gray-500  text-lg">Accréditation Maitre pratricienne en Hypnose spirituelle
-                            de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose de Spirituelle) en
-                            2022
-                        </li>
-
-
-                    </div>
-
-                    <ContactElement/>
                     {/*<div>*/}
                     {/*    <button className="mt-12"><a href={link}> en savoir plus </a></button>*/}
                     {/*</div>*/}
