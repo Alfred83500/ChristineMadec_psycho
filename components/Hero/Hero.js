@@ -23,7 +23,7 @@ function Hero(props) {
 
                 <button
 
-                    className="xl:mt-20 text-indigo-50 p-4 bg-red-900 w-2/4 md:w-1/4 rounded-md shadow hover:bg-red-700 duration-500 hover:text-gray-300 ease-in-out mx-auto text-2xl">
+                    className="xl:mt-20 text-indigo-50 p-4 bg-red-900 w-2/4 md:w-1/4 rounded-md shadow hover:bg-red-700 duration-500 hover:text-gray-300 ease-in-out mx-auto text-xl xl:text-xl">
                     <Link href="/contact"><a>Me contacter</a></Link></button>
 
 

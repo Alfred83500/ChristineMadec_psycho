@@ -14,7 +14,7 @@ export default function About({title, imageUrl, imageAlt, body}) {
             </div>
 
 
-            <div className="flex flex-col items-center sm:items-start lg:flex-row  justify-center   ">
+            <div className="flex flex-col items-center sm:items-start lg:flex-row  justify-around   ">
                 <div className="relative w-300 h-300 mx-auto">
 
                     <div
@@ -32,7 +32,7 @@ export default function About({title, imageUrl, imageAlt, body}) {
 
                     <div>
 
-                        <p className="mt-12 text-medium text-left leading-relaxed text-justify md:p-4 text-xl "><span
+                        <p className="mt-12 text-medium text-left leading-relaxed text-justify md:p-4 text-lg mr-8 "><span
                             className='font-bold'>Faire un bilan</span> pour mettre à jour les comportements compulsifs,
                             les
                             croyances erronées, les troubles psychosomatiques, les traumatismes.
@@ -68,14 +68,14 @@ export default function About({title, imageUrl, imageAlt, body}) {
                         <h3 className="font-roboto font-semibold text-gray-700 text-2xl mb-6">Diplômes et
                             certifications:</h3>
 
-                        <li className="text-gray-500  text-xl">Master PNL Programmation Neuro Linguistique</li>
-                        <li className="text-gray-500  text-xl">Master Sophrologie caycédienne</li>
-                        <li className="text-gray-500  text-xl">Europe Accréditation practicien par le Dr David Servan
+                        <li className="text-gray-500  text-lg">Master PNL Programmation Neuro Linguistique</li>
+                        <li className="text-gray-500  text-lg">Master Sophrologie caycédienne</li>
+                        <li className="text-gray-500  text-lg">Europe Accréditation practicien par le Dr David Servan
                             Schreiber en EMDR (Eye Movement Desinsitization Reprocessing)
                         </li>
-                        <li className="text-gray-500  text-xl">Practricienne neuro-sciences par le Dr Mario Beauregard
+                        <li className="text-gray-500  text-lg">Practricienne neuro-sciences par le Dr Mario Beauregard
                         </li>
-                        <li className="text-gray-500  text-xl">Accréditation Maitre pratricienne en Hypnose spirituelle
+                        <li className="text-gray-500  text-lg">Accréditation Maitre pratricienne en Hypnose spirituelle
                             de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose de Spirituelle) en
                             2022
                         </li>

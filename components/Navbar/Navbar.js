@@ -3,6 +3,14 @@ import {MenuIcon, XIcon} from '@heroicons/react/outline'
 import {useRouter} from "next/router";
 import Link from "next/link";
 
+
+
+
+
+
+
+
+
 const navigation = [
     {name: 'Accueil', href: '/', current: true},
     {name: 'Contact', href: '/contact', current: false},
@@ -21,11 +29,11 @@ export default function Navbar() {
 
 
     return (
-        <Disclosure as="nav" className="bg-transparent font-roboto  ">
+        <Disclosure as="nav" className="bg-white font-roboto fixed w-full z-50  ">
             {({open}) => (
                 <>
                     <div
-                        className="max-w-full  mx-auto sm:px-6 lg:px-8 h-[8vh] shadow-gray-300  shadow-sm fixed w-full z-50 top-0 bg-white">
+                        className="max-w-full  mx-auto sm:px-6 lg:px-8 shadow-gray-300  shadow-sm  w-full z-50 top-0 bg-white">
                         <div className="relative flex items-center h-16 mx-4 ">
                             <div className="absolute right-0 top-3 flex items-center md:hidden">
                                 {/* Mobile menu button*/}
@@ -74,7 +82,7 @@ export default function Navbar() {
 
 
                                                         className={classNames(
-                                                            currentRoute === item.href ? "text-black border-b border-orange-800" : 'text-gray-300 link link-underline link-underline-black text-black hover:text-gray-400 duration-700 '
+                                                            currentRoute === item.href ? "text-black border-b border-orange-800" : 'text-gray-500 link link-underline link-underline-black text-black hover:text-gray-700 duration-700 '
                                                         )}
                                                         aria-current={currentRoute == item.href ? 'page' : undefined}
 
