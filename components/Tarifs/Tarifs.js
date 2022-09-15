@@ -39,9 +39,9 @@ export default function Tarifs() {
                             <span className="text-2xl">/séance</span></div>
                         <div>
                             <div className='text-sm p-4 leading-6'>
-                                <span >1h d'entretien téléphonique</span> <br/>
-                                <span>2h pour l'exploration et l'analyse de la séance</span> <br/>
-                                <span>(Envoi d'audios de préparation)</span>
+                                <span >1h d&lsquo;entretien téléphonique</span> <br/>
+                                <span>2h pour l&lsquo;exploration et l&lsquo;analyse de la séance</span> <br/>
+                                <span>(Envoi d&lsquo;audios de préparation)</span>
                             </div>
 
 
