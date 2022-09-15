@@ -41,14 +41,14 @@ const Contact = () => {
     return (
 
         <div
-            className="absolute b py-36 bg-gray-200 bg-opacity-20 px-2 sm:px-6 h-[100vh] w-screen flex flex-col items-center font-roboto">
+            className=" b py-24 bg-gray-200 bg-opacity-20 px-2 sm:px-6 h-full w-screen flex flex-col items-center font-roboto">
             <div className="flex flex-col items-center">
                 <div className="uppercase text-5xl font-semibold text-gray-700 mx-auto ">Formulaire de Contact</div>
                 <div className="h-1 bg-red-900 w-32 mt-12"></div>
             </div>
 
 
-            <div className="mx-auto w-full max-w-7xl rounded-xl bg-white p-8 pt-12 px-12 shadow my-24 ">
+            <div className="mx-auto w-10/12 max-w-5xl rounded-xl bg-white pt-12 px-12 shadow my-12 ">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
 
 
@@ -134,7 +134,7 @@ const Contact = () => {
                             value: 1000,
                             message: 'votre message est trop long'
                         }
-                    })} rows="7"
+                    })} rows="4"
                               className={`border-b mt-12 w-12/12 focus:border-b focus:border-gray-800 focus:outline-none  ${errors.message ? 'border-red-700' : null}`}/>
 
                     <ErrorMessage

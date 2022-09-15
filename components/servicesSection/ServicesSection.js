@@ -17,7 +17,7 @@ const ServicesItems = [
     {
         title: `Ateliers d'apprentissage à la gestion du stress`,
         subtitle: `Information et inscription par téléphone`,
-        body: `Organisé en petits groupes au sein de deux espaces: à Hyères à l'espace Kyo Dake Wa et La Valette au dojo Esprit Zen`,
+        body: `Organisés en petits groupes au sein de deux espaces: à Hyères à l'espace Kyo Dake Wa et La Valette au dojo Esprit Zen`,
         emote: <FaYinYang/>,
 
 
@@ -41,8 +41,8 @@ export default function services() {
             <div className=" sm:mt-12 md:p-12 flex justify-between items-center ">
 
 
-                <p className='text-md sm:text-3xl italic text-gray-500 sm:ml-12 sm:mt-2 ml-1.5'>Je mets à disposition
-                    mes compétences et mon écoute dans le cadre de thérapies individuelles ou de groupes</p></div>
+                <p className='text-md sm:text-2xl italic text-gray-500 sm:ml-12 sm:mt-2 ml-1.5'>Je mets à disposition
+                    mes compétences, mon expérience et mon écoute dans le cadre de thérapies individuelles ou de groupes</p></div>
             <div className='w-full flex flex-col md:flex-row justify-between items-center md:items-start  mt-24'>
 
                 {ServicesItems.map((item) => {

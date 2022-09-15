@@ -28,7 +28,7 @@ export default function About({title, imageUrl, imageAlt, body}) {
 
                 </div>
 
-                <div className="space-x-5 mt-32 md:p-4">
+                <div className="space-x-5 mt-32 md:p-4 hidden lg:block ">
                     <h3 className="font-roboto font-semibold text-gray-700 text-2xl mb-6">Diplômes et
                         certifications:</h3>
 
@@ -37,17 +37,17 @@ export default function About({title, imageUrl, imageAlt, body}) {
                     <li className="text-gray-500  text-lg">Europe Accréditation practicien par le Dr David Servan
                         Schreiber en EMDR (Eye Movement Desinsitization Reprocessing)
                     </li>
-                    <li className="text-gray-500  text-lg">Practricienne neuro-sciences par le Dr Mario Beauregard
+                    <li className="text-gray-500  text-lg">Praticienne  neuro-sciences par le Dr Mario Beauregard
                     </li>
-                    <li className="text-gray-500  text-lg">Accréditation Maitre pratricienne en Hypnose spirituelle
-                        de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose de Spirituelle) en
+                    <li className="text-gray-500  text-lg">Accréditation Maitre  praticienne en Hypnose spirituelle
+                        de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose Spirituelle) en
                         2022
                     </li>
 
-
+                    <ContactElement/>
                 </div>
 
-                <ContactElement/>
+
                 </div>
 
 
@@ -55,13 +55,13 @@ export default function About({title, imageUrl, imageAlt, body}) {
 
                     <div>
 
-                        <p className="mt-12 text-medium text-left leading-relaxed text-justify md:p-4 text-lg mr-8 "><span
+                        <p className="mt-12 text-medium text-left leading-relaxed text-justify md:p-4 text-lg lg:mr-8 "><span
                             className='font-bold'>Faire un bilan</span> pour mettre à jour les comportements compulsifs,
                             les
                             croyances erronées, les troubles psychosomatiques, les traumatismes.
                             Utiliser la PNL, l&rsquo;EMDR ou l&rsquo;Hypnose comme <span className='font-bold'>thérapies de changement. </span>
                             <br/>Pourquoi ce choix ?<br/>
-                            Ces thérapies brèves font appel aux sciences de la connaissance de soi : <br/>
+                            Ces thérapies brèves font appel aux sciences de la connaissance de soi <br/>
                             1) la perception, l’intelligence, le langage, la mémoire, l&rsquo;attention, le
                             raisonnement, les émotions, l&rsquo;esprit <br/>
                             2) la métacognition qui est l&rsquo;activité mentale sur ses propres processus
@@ -86,6 +86,25 @@ export default function About({title, imageUrl, imageAlt, body}) {
                             inaccessibles dans notre état d&rsquo;être habituel. On peut créer de façon spécifique
                             l&rsquo;état qu’on veut atteindre. Elle permet aussi de se connecter à plus grand que
                             soi et d’explorer d&rsquo;autres espaces comme les vies antérieures. </p>
+                    </div>
+
+                    <div className="space-x-5 mt-32 md:p-4 lg:hidden block ">
+                        <h3 className="font-roboto font-semibold text-gray-700 text-2xl mb-6">Diplômes et
+                            certifications:</h3>
+
+                        <li className="text-gray-500  text-lg">Master PNL Programmation Neuro Linguistique</li>
+                        <li className="text-gray-500  text-lg">Master Sophrologie caycédienne</li>
+                        <li className="text-gray-500  text-lg">Europe Accréditation practicien par le Dr David Servan
+                            Schreiber en EMDR (Eye Movement Desinsitization Reprocessing)
+                        </li>
+                        <li className="text-gray-500  text-lg">Praticienne  neuro-sciences par le Dr Mario Beauregard
+                        </li>
+                        <li className="text-gray-500  text-lg">Accréditation Maitre  praticienne en Hypnose spirituelle
+                            de régression par l&rsquo;IIHS (Institut International d&rsquo;Hypnose Spirituelle) en
+                            2022
+                        </li>
+
+                        <ContactElement/>
                     </div>
 
                     {/*<div>*/}
