@@ -55,7 +55,7 @@ export default function confidentalite() {
                  <li>Le droit d&apos;opposition.</li>
                  <li>Les droits relatifs à la prise de décision automatisée et au profilage.</li> <br/>
                 Si vous souhaitez exercer ce droit, veuillez nous contacter via les coordonnées ci-dessous.
-                En outre, si vous êtes un résident européen, nous notons que nous traitons vos informations afin d'exécuter les contrats que nous pourrions avoir avec vous (par exemple, si vous passez une commande par le biais du site), ou autrement pour poursuivre nos intérêts commerciaux légitimes énumérés ci-dessus. En outre, veuillez noter que vos informations pourraient être transférées en dehors de l&apos;Europe, y compris au Canada et aux États-Unis. <br/> <br/>
+                En outre, si vous êtes un résident européen, nous notons que nous traitons vos informations afin d&apos;exécuter les contrats que nous pourrions avoir avec vous (par exemple, si vous passez une commande par le biais du site), ou autrement pour poursuivre nos intérêts commerciaux légitimes énumérés ci-dessus. En outre, veuillez noter que vos informations pourraient être transférées en dehors de l&apos;Europe, y compris au Canada et aux États-Unis. <br/> <br/>
 
             <h2 className='font-bold text-2xl'>Liens vers d&apos;autres sites web :
             </h2><br/>
