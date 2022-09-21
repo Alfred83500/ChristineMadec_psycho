@@ -34,7 +34,7 @@ export default function Navbar() {
                 <>
                     <div
                         className="max-w-full  mx-auto sm:px-6 lg:px-8 shadow-gray-300   w-full z-50 top-0 bg-white">
-                        <div className="relative flex items-center h-16 mx-4 ">
+                        <div className="relative flex items-center h-16 mx-4 z-50 ">
                             <div className="absolute right-0 top-3 flex items-center md:hidden">
                                 {/* Mobile menu button*/}
                                 <Disclosure.Button

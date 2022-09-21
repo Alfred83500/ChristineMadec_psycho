@@ -5,7 +5,7 @@ export default function ServiceCard({title, subtitle, body, emote}) {
 
         <div className='w-full flex flex-col justify-center 2xl:flex-row items-start  mt-10 sm:mt-0   '>
             <div
-                className="mx-auto  bg-red-900 p-5 flex items-start  rounded-full text-5xl text-white mb-10 xxl:mb-0">
+                className="mx-auto  bg-red-900 p-5 flex items-start  rounded-full text-5xl text-white mb-10 xxl:mb-0 ">
                 {emote}
 
             </div>
