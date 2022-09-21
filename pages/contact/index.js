@@ -15,7 +15,7 @@ const Contact = () => {
     async function onSubmit(values) {
         let config = {
             method: 'post',
-            url: `https://christinemadec-psychologie-ijujw8nty-alfred83500.vercel.app/api/contact`,
+            url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
             headers: {
                 'content-type': 'application/json',
             },
