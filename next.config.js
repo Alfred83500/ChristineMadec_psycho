@@ -10,7 +10,7 @@ module.exports = {
     },
 
     env: {
-        NEXT_PUBLIC_API_URL: 'http://localhost:3000',
+        NEXT_PUBLIC_API_URL: 'https://christinemadec-psycho.vercel.app/',
         user: 'tbonnardel@gmail.com',
         pass: '0SHt9rd6aOgRfZTJ'
 
