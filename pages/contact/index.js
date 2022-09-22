@@ -158,7 +158,8 @@ const Contact = () => {
                         </label>
 
                     </div>
-                    <button onSubmit={handleSubmit(onSubmit)}
+                    <button
+                        onSubmit={handleSubmit(onSubmit)}
 
                         className="inline-flex mx-auto w-60 justify-center mt-24 py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-red-900 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800">
                         Envoyer
