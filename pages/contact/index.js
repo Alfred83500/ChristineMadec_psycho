@@ -25,7 +25,7 @@ const Contact = () => {
 
         try {
             const response = await axios(config);
-            if (response.status == 200) {
+            if (response.status === 200) {
                 reset();
                 router.push('./contactSent')
 
