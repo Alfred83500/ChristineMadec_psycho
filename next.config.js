@@ -5,7 +5,7 @@ const nextConfig = {
 module.exports = {
     reactStrictMode: true,
     images: {
-        loader: "default",
+        loader: "deflt",
         domains: ["localhost"],
     },
 
