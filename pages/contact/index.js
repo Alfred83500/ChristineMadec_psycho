@@ -5,9 +5,12 @@ import axios from "axios";
 import {useRouter} from "next/router";
 import ContactElement from '../../components/ContactElement/ContactElement'
 import Footer from "../../components/Footer/Footer";
+import process from "../../next.config";
+
 
 
 const Contact = () => {
+
     const {register, handleSubmit, formState: {errors}, reset} = useForm({criteriaMode: "all"});
     const router = useRouter()
 
@@ -25,9 +28,11 @@ const Contact = () => {
 
         try {
             const response = await axios(config);
-            if (response.status === 200) {
+            if (response.status == 200) {
                 reset();
-                router.push('./contactSent')
+                await router.push('./contactSent')
+
+
 
             }
         } catch (err) {
@@ -185,5 +190,3 @@ const Contact = () => {
 }
 
 export default Contact;
-
-
