@@ -14,7 +14,7 @@ function Hero(props) {
 
                         <h1 className=" text-4xl text-center md:text-4xl lg:text-7xl  text-red-900 font-semibold font-roboto ">Psychologue
                             à Toulon</h1>
-                        <h2 className="text-xl md:text-xl font-medium mt-12 text-white italic text-center text-gray-500 lg:mt-12">Hypnose
+                        <h2 className="text-xl md:text-xl font-medium mt-12 italic text-center text-gray-500 lg:mt-12">Hypnose
                             - Thérapies brèves - Gestion du stress - <span
                                 className="block">Régression vies antérieures </span></h2>
                     </div>
