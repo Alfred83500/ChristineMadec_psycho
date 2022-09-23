@@ -41,7 +41,7 @@ export default function handler(req, res) {
     //creation du message
 
     const sendGridMail = {
-        to:'contact.christine.madec@gmail.com',
+        to:'chrismade@orange.fr',
         from:'contact.christine.madec@gmail.com',
         templateId: 'd-e11f40a0502c467a881bbcfd6b6b4ca3',
         dynamic_template_data: {
