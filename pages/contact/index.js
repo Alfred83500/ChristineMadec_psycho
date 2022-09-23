@@ -1,192 +1,106 @@
-import React from 'react';
-import {useForm} from 'react-hook-form';
-import {ErrorMessage} from '@hookform/error-message';
-import axios from "axios";
-import {useRouter} from "next/router";
-import ContactElement from '../../components/ContactElement/ContactElement'
-import Footer from "../../components/Footer/Footer";
-import process from "../../next.config";
+import React, { useState } from "react";
+import {useForm} from "react-hook-form";
+
+
+export default function ContactUs() {
+    // Variables
+    const {
+        register,
+        handleSubmit,
+        formState: {errors}
+    } = useForm()
 
 
 
-const Contact = () => {
+    //State
+    const [isLoading, setIsLoading] = useState(false);
 
-    const {register, handleSubmit, formState: {errors}, reset} = useForm({criteriaMode: "all"});
-    const router = useRouter()
+    //Methods
 
+    const onSubmitHandler = async (data) => {
+        if(!isLoading) {
+            setIsLoading(true);
 
-    async function onSubmit(values) {
-        let config = {
-            method: 'post',
-            url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-            headers: {
-                'content-type': 'application/json',
-            },
-            data: values,
-        };
+            const response = await fetch('api/contact', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
 
+            const result = response.json();
 
-        try {
-            const response = await axios(config);
-            if (response.status == 200) {
-                reset();
-                await router.push('./contactSent')
-
-
-
+            setIsLoading(false);
+            console.log(response)
+            if(!response.ok) {
+                console.log('errors')
             }
-        } catch (err) {
-            console.error(err)
+
+            else {
+                console.log("ok");
+            }
         }
+    };
 
-    }
 
-    console.log(errors);
+
 
     return (
+        <main className="pt-24">
+            <form
+                className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white d"
+                onSubmit={handleSubmit(onSubmitHandler)}
+            >
+                <h1 className="text-2xl font-bold text-gray-700 uppercase">Me contacter</h1>
 
-        <div
-            className=" b py-24 bg-gray-200 bg-opacity-20 px-2 sm:px-6 h-full w-screen flex flex-col items-center font-roboto">
-            <div className="flex flex-col items-center">
-                <div className="uppercase text-5xl font-semibold text-gray-700 mx-auto ">Formulaire de Contact</div>
-                <div className="h-1 bg-red-900 w-32 mt-12"></div>
-            </div>
+                <label htmlFor="fullname" className="text-gray-500 font-light mt-8 ">Nom<span className="text-red-500 ">*</span></label>
+                <input type="text"
 
+                       className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                       {...register('name', {
+                           required:true
+                       })}
+                />
+                {errors.name && <p className='text-red-700'>Vous devez renseigner votre nom</p> }
 
-            <div className="mx-auto w-10/12 max-w-5xl rounded-xl bg-white pt-12 px-12 shadow my-12 ">
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+                <label htmlFor="email" className="text-gray-500 font-light mt-4 ">E-mail<span className="text-red-500">*</span></label>
+                <input type="email"
+                       className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                       {...register('email', {
+                           required:true
+                       })}
 
+                />
+                {errors.email && <p className='text-red-700'>Vous devez renseigner votre adresse email</p> }
 
-                    <input type="text" placeholder="Nom*" {...register("Nom", {
-                        required: 'Vous devez entrer votre nom',
-                        maxLength: {
+                <label htmlFor="subject" className="text-gray-500 font-light mt-4 ">tel<span className="text-red-500">*</span></label>
+                <input type="text"
+                       className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                       {...register('tel', {
+                           required:true
+                       })}
 
-                            value: 30,
-                            message: "vous ne pouvez pas dépasser 30 caractères"
-                        },
+                />
+                {errors.tel && <p className='text-red-700'>Vous devez renseigner votre numéro de téléphone</p> }
+
+                <label htmlFor="message" className="text-gray-500 font-light mt-4 ">Message<span className="text-red-500">*</span></label>
+                <textarea
+                    className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+                    {...register('message', {
+                        required:true
                     })}
-                           className={`border-b focus:border-b focus:border-gray-800 focus:outline-none ${errors.Nom ? 'border-red-700' : null}`}
-                    />
-
-
-                    <ErrorMessage
-                        errors={errors}
-                        name="Nom"
-                        render={({messages}) =>
-                            messages &&
-                            Object.entries(messages).map(([type, message]) => (
-                                <p key={type} className="text-red-700">{message}</p>
-                            ))
-                        }
-                    />
-
-
-                    <div className="flex w-full justify-between">
-                        <div className="flex flex-col mt-12 ml-auto w-full">
-                            <input type="text" placeholder="E-mail*" {...register("Email", {
-                                required: "Vous devez entrer votre email",
-                                max: 100,
-                                min: 3,
-                                pattern: {
-                                    value: /^\S+@\S+$/i,
-                                    message: "Veuillez entrer une adresse mail valide"
-                                }
-                            })}
-                                   className={`border-b mt-12 w-11/12 focus:border-b focus:border-gray-800 focus:outline-none ${errors.Email ? 'border-red-700' : null}`}
-                            />
-
-                            <ErrorMessage
-                                errors={errors}
-                                name="Email"
-                                render={({messages}) =>
-                                    messages &&
-                                    Object.entries(messages).map(([type, message]) => (
-                                        <p key={type} className="text-red-700">{message}</p>
-                                    ))
-                                }
-                            />
-                        </div>
-                        <div className="flex flex-col mt-12  w-full">
-                            <input type="tel" placeholder="Tel*" {...register("tel", {
-                                required: 'Vous devez entrer votre numéro de téléphone',
-                                maxLength: {
-                                    value: 30,
-                                    message: "Votre numéro n'est pas valide"
-                                },
-                                pattern: {
-                                    value: /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/i,
-                                    message: "Votre numéro n'est pas valide"
-                                }
-                            })}
-                                   className={`border-b mt-12 w-11/12 focus:border-b focus:border-gray-800 focus:outline-none ${errors.tel ? 'border-red-700' : null}`}/>
-
-                            <ErrorMessage
-                                errors={errors}
-                                name="tel"
-                                render={({messages}) =>
-                                    messages &&
-                                    Object.entries(messages).map(([type, message]) => (
-                                        <p key={type} className="text-red-700">{message}</p>
-                                    ))
-                                }
-                            />
-                        </div>
-                    </div>
-
-                    <textarea placeholder="Message*"{...register("message", {
-                        required: 'Entrez votre message',
-                        maxLength: {
-                            value: 1000,
-                            message: 'votre message est trop long'
-                        }
-                    })} rows="4"
-                              className={`border-b mt-12 w-12/12 focus:border-b focus:border-gray-800 focus:outline-none  ${errors.message ? 'border-red-700' : null}`}/>
-
-                    <ErrorMessage
-                        errors={errors}
-                        name="message"
-                        render={({messages}) =>
-                            messages &&
-                            Object.entries(messages).map(([type, message]) => (
-                                <p key={type} className="text-red-700">{message}</p>
-                            ))
-                        }
-                    />
-
-
-                    <div className="Flex mt-12 italic items-center text-gray-700 opacity-50 text-small "> Demander à
-                        être rappelé
-                        <label htmlFor="recontacter">
-                            <input {...register("rappeler", {required: false})}
-                                   type="checkbox" value="oui"
-                                   className="ml-8 scale-125 bg-gray-100 rounded border-gray-300 focus:ring-red-900 items-center focus:outline-none"/>
-                        </label>
-
-                    </div>
-                    <button
-                        onSubmit={handleSubmit(onSubmit)}
-
-                        className="inline-flex mx-auto w-60 justify-center mt-24 py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-red-900 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800">
+                ></textarea>
+                {errors.message && <p className='text-red-700'>Vous devez renseigner votre le contenu de votre message</p> }
+                <div className="flex flex-row items-center justify-start">
+                    {!isLoading && (<button className="px-10 mt-8 py-2 bg-red-700 text-gray-50 font-light rounded-md text-lg flex flex-row items-center mx-auto">
                         Envoyer
+
                     </button>
-
-                    <div className="italic text-gray-700 opacity-50 text-xs pt-8 "> les champs notés avec une * sont
-                        obligatoires
-                    </div>
-
-                </form>
-
-            </div>
-            <div className="mx-auto w-full max-w-7xl  px-12   ">
-                <ContactElement/>
-            </div>
-            <div className=" relative bottom-0">
-                <Footer/>
-            </div>
-
-
-        </div>
+                        )}
+                </div>
+            </form>
+        </main>
     );
 }
-
-export default Contact;

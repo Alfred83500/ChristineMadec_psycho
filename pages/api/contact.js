@@ -1,40 +1,70 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import nodemailer from 'nodemailer'
-import process from "../../next.config";
 
-export default async (req, res) => {
-    const {Nom, Email, tel, message, rappeler} = req.body;
+import sgMail from '@sendgrid/mail'
 
-    const transporter = nodemailer.createTransport({
+export default function handler(req, res) {
+    if(req.method !== 'POST') {
+        res.status(405).json({message: 'INVALID_METHOD'});
+        return;
+    }
 
-        host: 'smtp-relay.sendinblue.com',
-        port: 587,
+    //variables
 
-        auth: {
-            user: process.env.user,
-            pass: process.env.pass
+    const {name, tel, email, message} = req.body;
+
+
+    if(!name || !tel || !email ||name || !message) {
+        res.status(400).json({message: 'INVALID_PARAMETER'});
+    }
+
+    const pattern =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!pattern.test(email)) {
+        res.status(400).send({
+            message: "EMAIL_SYNTAX_INCORRECT",
+        });
+        return;
+    }
+
+
+    //Transformer le retour à la ligne pour le HTML
+    const messageModif = message.replace(/\r/g, '<br>')
+        .replace(/\n/g, '<br>')
+        .replace(/\t/g, '<br>')
+        .replace(/<(?!br\s*\/?)[^>]+>/, '<br>');
+
+
+    //Donner la clé API
+
+    sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+
+
+    //creation du message
+
+    const sendGridMail = {
+        to:'tbonnardel@gmail.com',
+        from:'tbonnardel@gmail.com',
+        templateId: 'd-60295468fea748139f4095c949483d8a',
+        dynamic_template_data: {
+            name: name,
+            Email: email,
+            tel: tel,
+            message: messageModif,
 
         }
-    });
-
-    try {
-        const emailRes = transporter.sendMail({
-            from: Email,
-            to: 'tbonnardel@gmail.com',
-            subject: `Prise de contact de ${Nom}`,
-            html: `<p>Vous avez une nouvelle prise de contact</p><br>
-                <p><strong>Name:</strong> ${Nom} </p><br>
-                <p><strong>Email:</strong> ${Email} </p><br>
-                <p><strong>Tel:</strong> ${tel} </p><br>
-                <p><strong>Demande a être rappelé:</strong> ${rappeler} </p><br>
-                <p><strong>Message:</strong> ${message} </p><br>`
-        });
-        console.log('Message Sent', emailRes.message)
-    } catch (err) {
 
     }
-    console.log(req.body)
-    res.status(200).json(req.body)
-}
 
-;
+    //sendgrid
+
+    sgMail
+        .send(sendGridMail)
+        .then((response) => {
+            console.log(response[0].statusCode)
+            console.log(response[0].headers)
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+
+
+}
