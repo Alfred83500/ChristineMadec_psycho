@@ -50,7 +50,7 @@ export default function ContactUs() {
 
 
     return (
-        <main className="pt-24">
+        <main className="pt-24 md:mx-12 mx-4">
             <form
                 className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white d"
                 onSubmit={handleSubmit(onSubmitHandler)}
