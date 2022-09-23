@@ -12,7 +12,7 @@ export default function handler(req, res) {
     const {name, tel, email, message} = req.body;
 
 
-    if(!name || !tel || !email ||name || !message) {
+    if(!name || !tel || !email || !message) {
         res.status(400).json({message: 'INVALID_PARAMETER'});
     }
 
@@ -30,7 +30,7 @@ export default function handler(req, res) {
     const messageModif = message.replace(/\r/g, '<br>')
         .replace(/\n/g, '<br>')
         .replace(/\t/g, '<br>')
-        .replace(/<(?!br\s*\/?)[^>]+>/, '<br>');
+        .replace(/<(?!br\s*\/?)[^>]+>/, '');
 
 
     //Donner la clé API

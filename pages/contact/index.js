@@ -12,8 +12,9 @@ export default function ContactUs() {
 
 
 
-    //State
+    //States
     const [isLoading, setIsLoading] = useState(false);
+    const [isSended, setIsSended] = useState(false);
 
     //Methods
 
@@ -28,7 +29,7 @@ export default function ContactUs() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            });
+            })
 
             const result = response.json();
 
@@ -40,6 +41,7 @@ export default function ContactUs() {
 
             else {
                 console.log("ok");
+                setIsSended(true);
             }
         }
     };
@@ -54,6 +56,12 @@ export default function ContactUs() {
                 onSubmit={handleSubmit(onSubmitHandler)}
             >
                 <h1 className="text-2xl font-bold text-gray-700 uppercase">Me contacter</h1>
+
+                {isSended && (
+                    <p>
+                        Votre message a bien été envoyé avec succès, je vous répondrai rapidement.
+                    </p>
+                )}
 
                 <label htmlFor="fullname" className="text-gray-500 font-light mt-8 ">Nom<span className="text-red-500 ">*</span></label>
                 <input type="text"
