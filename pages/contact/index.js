@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 
 
+
 export default function ContactUs() {
     // Variables
     const {
@@ -14,7 +15,7 @@ export default function ContactUs() {
 
     //States
     const [isLoading, setIsLoading] = useState(false);
-    const [isSended, setIsSended] = useState(false);
+    const [isSent, setIsSent] = useState(false);
 
     //Methods
 
@@ -34,14 +35,13 @@ export default function ContactUs() {
             const result = response.json();
 
             setIsLoading(false);
-            console.log(response)
             if(!response.ok) {
                 console.log('errors')
             }
 
             else {
                 console.log("ok");
-                setIsSended(true);
+                setIsSent(true);
             }
         }
     };
@@ -57,7 +57,7 @@ export default function ContactUs() {
             >
                 <h1 className="text-2xl font-bold text-gray-700 uppercase">Me contacter</h1>
 
-                {isSended && (
+                {isLoading && (
                     <p>
                         Votre message a bien été envoyé avec succès, je vous répondrai rapidement.
                     </p>

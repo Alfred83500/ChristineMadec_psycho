@@ -46,7 +46,7 @@ export default function handler(req, res) {
         templateId: 'd-e11f40a0502c467a881bbcfd6b6b4ca3',
         dynamic_template_data: {
             name: name,
-            Email: email,
+            email: email,
             tel: tel,
             message: messageModif,
 
@@ -66,5 +66,17 @@ export default function handler(req, res) {
             console.error(error)
         })
 
+        // (async () => {
+        //     try {
+        //         await sgMail.send(sendGridMail);
+        //         res.status(202).json({mesage: 'EMAIL_SENT_SUCCESSFULLY'})
+        //
+        //     }
+        //
+        //     catch {
+        //         res.status(500).json({message: 'ERROR_WITH_SENDGRID'})
+        //
+        //     }
+        // })();
 
 }
