@@ -11,7 +11,7 @@ export default function conditionsgenerales() {
              <p className='text-center'>Tel : 06 14 63 23 69.</p> <br/> <br/>
              <p className='text-center'>Site Internet : www.christine-madec-psychologue.fr</p> <br/> <br/>
              <p className='text-center'>N° ADELI (délivré par l’Agence Régionale de Santé) :  83 93 01 850</p> <br/> <br/>
-             <p className='text-center'>N° SIRET :</p> <br/> <br/>
+             <p className='text-center'>N° SIREN : 75 38 01 850</p> <br/> <br/>
 
 
             <p className="italic">Ces conditions de vente prévaudront sur toutes autres conditions générales ou particulières non expressément agréées par le vendeur. Le vendeur se réserve de pouvoir modifier ses conditions de vente à tout moment. Dans ce cas, les conditions applicables seront celles en vigueur à la date de la demande de l’acheteur.</p><br/>

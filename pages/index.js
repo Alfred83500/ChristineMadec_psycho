@@ -23,7 +23,7 @@ export default function Home({data}) {
 
             <div className="flex flex-col">
                 <div className="mx-auto mt-24">
-                    <h2 className='text-center text-3xl  text-gray-700 font-roboto font-medium  px-6'>Commnent puis-je
+                    <h2 className='text-center text-3xl  text-gray-700 font-roboto font-medium  px-6'>Comment puis-je
                         vous aider</h2>
                     <div className="w-2/12  h-0.5 bg-red-900 text-center mx-auto mt-2 mb-12"></div>
 

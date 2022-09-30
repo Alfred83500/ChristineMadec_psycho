@@ -13,7 +13,7 @@ export default function metnionslegales() {
 
    <p>Le présent site, accessible à l’URL christine-madec-psychologue.fr (le « Site »), est édité par : <br/>
 
-        Christine Madec, résidant Chemin départemental 46, de nationalité Française (France), né(e) le 01/01/1965,</p><br/>
+        Christine Madec, résidant Chemin départemental 46, de nationalité Française (France), né(e) le 29/08/1950,</p><br/>
 
 
     <h2 className='font-bold text-2xl'>Hébergement</h2><br/>
